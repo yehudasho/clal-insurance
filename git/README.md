@@ -46,6 +46,9 @@ git push
 git push origin "tag-lab-01"
 ```
 ## Local Area - untracked, unmodifed, modifed, staged
+- The staged area in Git is also called the index or cache area
+- It holds changes that you’ve marked to be included in the next commit, but haven’t committed yet
+  
 ```
 	# untracked - new file but not in git add yet
 vi test-file-02.txt
