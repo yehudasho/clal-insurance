@@ -20,7 +20,7 @@ TFS was later renamed to Azure DevOps Server.
 # Practie 02
 ## lab-01
   - https://gitlab.com/sela-git-basic-workshop/lab-01
-- Bonus: clone the repository of clal and do it via git bash
+- Bonus: clone the repository of clal and do it via **Git Bash**
   - git clone https://your/git/path/name.git
   - 
   
