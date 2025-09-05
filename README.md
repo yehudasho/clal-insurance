@@ -1,5 +1,5 @@
 # Clal-Insurance
 
-![Icon](assets/icon.png)
+![Icon](assets/clal.png)
 ## Git Lecture
 
