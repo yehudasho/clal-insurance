@@ -38,7 +38,7 @@ git tag
 git status
 ```
 
-- Go to 
+- Go to https://github.com/yehudasho/clal-insurance/tags in order to see the tag
 ```
 git tag "tag-lab-01"
 git pull
