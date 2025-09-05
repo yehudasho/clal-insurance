@@ -45,3 +45,22 @@ git pull
 git push
 git push origin "tag-lab-01"
 ```
+## Local Area - untracked, unmodifed, modifed, staged
+```
+  # untracked
+vi test-file-01.txt
+git status
+cat README.md
+		# tracked, unmodifed, modifed
+git add README.md
+git status
+vi README.md             		# updated the file
+git status
+cat README.md
+git restore --staged README.md    		# To bring back 
+cat README.md
+git status
+git rm --cached README.md 	# To bring back to untracked, out of git 
+git staus
+ls				
+```
