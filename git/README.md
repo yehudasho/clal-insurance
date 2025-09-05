@@ -21,7 +21,6 @@ TFS was later renamed to Azure DevOps Server.
 ## lab-01
   - https://gitlab.com/sela-git-basic-workshop/lab-01
 - Bonus: clone the repository of clal and do it via **Git Bash**
-  **For Example:** git clone https://your/git/path/name.git
   - git clone https://github.com/yehudasho/clal-insurance.git
 
   
