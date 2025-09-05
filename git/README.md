@@ -33,7 +33,15 @@ cat test-file-01.txt
 ls
 git add test-file-01.txt
 git commit -m "new line"
+git tag "tag-lab-01"
+git tag
 git status
 ```
 
-  
+- Go to 
+```
+git tag "tag-lab-01"
+git pull
+git push
+git push origin "tag-lab-01"
+```
