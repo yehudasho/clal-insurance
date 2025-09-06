@@ -45,7 +45,8 @@ git pull
 git push
 git push origin "tag-lab-01"
 ```
-## Local Area - untracked, unmodifed, modifed, staged
+# Git Structure, Four Areas and Lifecycle
+## Git Structure - untracked, unmodifed, modifed, staged
 - The staged area in Git is also called the index or cache area
 - It holds changes that you’ve marked to be included in the next commit, but haven’t committed yet
   
@@ -84,4 +85,40 @@ git commit -m "staged"
 git diff --cached
 				- msg in cli is: no diff of git
 git status
+```
+
+## Four Areas 
+### Local Area or Working Area
+```
+mkdir course-name
+cd course-name
+ls -la
+git init
+ls -la                # you can see the ./git folder
+ls -la ./git
+cat ./git/config                                       - see the diff with remote server
+cat ../devops-git-hungry-to-healthy/.git/config
+Gitignore - go to gitignore.io site​
+from site choose vsc and python - create file to add to .gitignore​
+Paralell on .git folder
+```
+### Stage Area
+- The staged area in Git is also called the index or cache area
+- It holds changes that you’ve marked to be included in the next commit, but haven’t committed yet
+
+- More Example
+```
+git status
+git diff --cached
+echo "stage area example 01" >> README.md
+git diff --cached
+git status
+git add .
+git diff --cached
+cat README.md
+git status
+git commit -m "nnn"
+git diff --cached
+git status
+
 ```
