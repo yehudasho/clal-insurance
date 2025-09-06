@@ -205,3 +205,71 @@ cat ~/.gitconfig
 git rm -f mv-log-rm-file-01.txt
 git ls-files
 ```
+
+# Practie 04
+
+## Branches - workfolw via visualizing-git 
+- Make sure you are not lossing the head
+
+- Go to http://git-school.github.io/visualizing-git
+  
+```
+git commit "01"
+git commit "02"
+git commit "03"
+git checkout -b "new-branch"
+git commit "new-branch-01"
+git commit "new-branch-02"
+git checkout head~3
+git checkout -b "feature-01"	
+git commit "feature-01"
+git commit "feature-02"
+git commit "feature-03"
+git checkout master 
+git checkout -b "feature-02"
+git commit "feature-02-01"
+git commit "feature-02-02"
+git commit "feature-02-03"
+git commit "feature-02-04"
+
+	# lossing the head				
+git checkout head~6 
+git commit "lossing the head"
+git commit "lossing the head 02"
+git checkout -b "loss-head-br"           # fix lossing the head
+git branch
+git checkout master
+git branch -d "loss-head-br"             # delete branch
+git branch
+```
+
+## Branches - workfolw via Visual Studio Code  or Git bash
+
+```
+git status
+git branch
+git branch --all
+git branch -r
+git checkout -b feature01
+git branch
+git branch --all
+ls
+ls -la
+cat .gitignore
+vi README.md
+cat README.md
+git add .
+git commit -m "first commit in feature br"
+echo "add second line in feature br" >> README.md
+git diff --cached
+git add .
+git diff --cached
+git commit -m "second commit in feature br"
+git status
+git branch
+git branch --all
+git pull
+git push 					# the message is since we need to sync the branches
+git push --set-upstream origin feature01
+git push
+```
