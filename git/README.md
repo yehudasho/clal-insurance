@@ -87,7 +87,7 @@ git diff --cached
 git status
 ```
 
-## Four Areas 
+## Four Areas - Working, Index, Repository and Stash
 ### Local Area or Working Area
 ```
 mkdir course-name
@@ -102,7 +102,7 @@ Gitignore - go to gitignore.io site​
 from site choose vsc and python - create file to add to .gitignore​
 Paralell on .git folder
 ```
-### Stage Area
+### Stage Area or Index Area
 - The staged area in Git is also called the index or cache area
 - It holds changes that you’ve marked to be included in the next commit, but haven’t committed yet
 
