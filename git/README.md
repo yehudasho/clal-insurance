@@ -46,21 +46,42 @@ git push
 git push origin "tag-lab-01"
 ```
 ## Local Area - untracked, unmodifed, modifed, staged
+- The staged area in Git is also called the index or cache area
+- It holds changes that you’ve marked to be included in the next commit, but haven’t committed yet
+  
 ```
-  # untracked
-vi test-file-01.txt
+	# untracked - new file but not in git add yet
+vi test-file-02.txt
 git status
-cat README.md
-		# tracked, unmodifed, modifed
-git add README.md
+ 				 - msg in cli is: Untracked files
+cat test-file-02.txt
+
+	# unmodifed
+git add test-file-02.txt
+git commit -m "commited"
+				- you can combine commit and add with one command:
+git commit -am  "am"
 git status
-vi README.md             		# updated the file
+				- is committed and unmodifed
+
+	
+	# modifed
+echo "new line-02" >> test-file-02.txt
 git status
-cat README.md
-git restore --staged README.md    		# To bring back 
-cat README.md
+				- msg in cli is:  modified:   test-file-02.txt
+git commit -am  "am"
+				- msg in cli is:  modified:   nothing to commit, working tree clean
+
+	# staged
 git status
-git rm --cached README.md 	# To bring back to untracked, out of git 
-git staus
-ls				
+git diff --cached
+echo "new line-03" >> test-file-02.txt
+git status
+git add test-file-02.txt
+git diff --cached
+				- msg in cli diff og git
+git commit -m "staged"
+git diff --cached
+git status
+
 ```
