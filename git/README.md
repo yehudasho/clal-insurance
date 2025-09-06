@@ -201,4 +201,7 @@ git diff 67c66 af8e1
 		# add as alias
 git config --global alias.lg "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all"
 cat ~/.gitconfig
+
+git rm -f mv-log-rm-file-01.txt
+ls 
 ```
