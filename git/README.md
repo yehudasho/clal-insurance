@@ -122,3 +122,50 @@ git diff --cached
 git status
 
 ```
+### Repository Area ( .git )
+- Repository = permanent history of commits.
+- Repository = All in the .git folder that stores all commits, branches, tags, and history
+
+```
+ls -la                # you can see the ./git folder
+ls -la ./git
+cat ./git/config                                       - see the diff with remote server
+cat ../devops-git-hungry-to-healthy/.git/config
+Gitignore - go to gitignore.io site​
+from site choose vsc and python - create file to add to .gitignore​
+Paralell on .git folder
+```
+### Stash Area 
+Stash = temporary storage for unfinished work.
+- Step-by-step example of using git stash while editing README.md,
+  temporarily switching to work on index.html, and then 
+  returning to your original work
+- You're on main branch working on README.md,
+  but suddenly you need to fix something in index.html first
+- stash Area
+
+```
+ls -ltra
+git status
+cat README.md
+echo "stash example" >> README.md
+cat README.md
+git status
+git stash list
+git stash push -m "contact switch to other task"
+git stash list
+git status
+cat index.html 			# make sure that the content of index.html file already exist and commited
+echo "<h1>Fixing index.html</h1>" >> index.html
+cat index.html
+git stash list
+git add index.html
+git commit -m "fix index file"
+git status
+git stash pop		# Now we can back to work on README.md task
+git status
+git add README.md
+git commit -m "END task of readme file"
+git stash list
+git stash clear				# clear if needed
+```
