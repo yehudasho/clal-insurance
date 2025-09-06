@@ -79,9 +79,9 @@ echo "new line-03" >> test-file-02.txt
 git status
 git add test-file-02.txt
 git diff --cached
-				- msg in cli diff og git
+				- msg in cli is: diff of git
 git commit -m "staged"
 git diff --cached
+				- - msg in cli is: no diff of git
 git status
-
 ```
