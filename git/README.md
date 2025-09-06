@@ -169,3 +169,36 @@ git commit -m "END task of readme file"
 git stash list
 git stash clear				# clear if needed
 ```
+# Practie 03
+## Git mv, log and rm commands
+```
+echo "mv-log-rm file line 01" >> mv-log-rm-file.txt
+git add .
+git commit -m "new"
+ls
+git status
+cat mv-log-rm-file.txt
+git mv mv-log-rm-file.txt mv-log-rm-file-01.txt
+git status
+git add .
+git commit -m "new"
+git status
+git log						# See the SHA1
+gitk
+git log --oneline mv-log-rm-file-01
+git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all
+gitk
+
+echo "mv-log-rm file line 02" >> mv-log-rm-file-01.txt
+cat mv-log-rm-file-01.txt
+git commit -am "am"
+git status
+git log mv-log-rm-file-01.txt
+
+	# git diff <SHA 12345>  <SHA67899>
+git diff 67c66 af8e1
+
+		# add as alias
+git config --global alias.lg "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --all"
+cat ~/.gitconfig
+```
