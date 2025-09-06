@@ -82,6 +82,6 @@ git diff --cached
 				- msg in cli is: diff of git
 git commit -m "staged"
 git diff --cached
-				- - msg in cli is: no diff of git
+				- msg in cli is: no diff of git
 git status
 ```
