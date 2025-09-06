@@ -203,5 +203,5 @@ git config --global alias.lg "log --graph --pretty='%Cred%h%Creset -%C(auto)%d%C
 cat ~/.gitconfig
 
 git rm -f mv-log-rm-file-01.txt
-ls 
+git ls-files
 ```
