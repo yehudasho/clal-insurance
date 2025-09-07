@@ -1,5 +1,5 @@
 # Clal-Insurance
-- Git Lecture
+- Git Lecture 01
 
 ![Icon](assets/clal.png)
 
