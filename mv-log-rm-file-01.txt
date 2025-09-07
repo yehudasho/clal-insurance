@@ -1,2 +1,0 @@
-mv-log-rm file line 01
-mv-log-rm file line 02
