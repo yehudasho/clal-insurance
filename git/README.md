@@ -280,7 +280,10 @@ git push
 ## Rebase
 
 # Practie 07
-## Working via Visual Studio Code (VSC)
+## Git - Working via Visual Studio Code (VSC)
+
+- Open the VSC
+- Create a new Index.html file
 
 # Practie 08
 ## Hooks
