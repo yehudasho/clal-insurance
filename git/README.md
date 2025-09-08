@@ -283,8 +283,21 @@ git push
 ## Git - Working via Visual Studio Code (VSC)
 
 - Open the VSC
-- Create a new Index.html file
-
+- Create a new clal.html file
+- copy the contant of index.html file into clal.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello Clal! 🎉</h1>
+    <p>Git - Working via Visual Studio Code .</p>
+</body>
+</html>
+```
+- commit the file
 # Practie 08
 ## Hooks
 
