@@ -1,4 +1,4 @@
-# Practie 01
+# Practice 01
 - GIT - it is not just random 3 letters
 - Created by Linus Torvalds in 2005 (the same person who created Linux)
 
@@ -18,7 +18,7 @@ TFS was later renamed to Azure DevOps Server.
 - In short:
   - TFVC = just the centralized version control system.
   - TFS = the whole DevOps/ALM platform, which includes TFVC (or Git).
-# Practie 02
+# Practice 02
 ## lab-01
 - https://gitlab.com/sela-git-basic-workshop/lab-01
   
@@ -169,7 +169,7 @@ git commit -m "END task of readme file"
 git stash list
 git stash clear				# clear if needed
 ```
-# Practie 03
+# Practice 03
 ## Git mv, log and rm commands
 ```
 echo "mv-log-rm file line 01" >> mv-log-rm-file.txt
@@ -206,7 +206,7 @@ git rm -f mv-log-rm-file-01.txt
 git ls-files
 ```
 
-# Practie 04
+# Practice 04
 
 ## Branches - workfolw via visualizing-git 
 - Make sure you are not lossing the head
@@ -273,11 +273,33 @@ git push 					# the message is since we need to sync the branches
 git push --set-upstream origin feature01
 git push
 ```
-# Practie 05
-## Merge
+
+
+# Practice 05
+## Revert, Cherry-pick
+
+```
+echo "line 01" >> cherry-pick.txt
+git add .
+git commit -m "line-01"
+echo "line 02" >> cherry-pick.txt
+git add .
+git commit -m "line-02"
+echo "line 03" >> cherry-pick.txt
+git commit -m "line-03"
+git add .
+git commit -m "line-03"
+git log --oneline cherry-pick.txt
+	# Output
+			$ git log --oneline cherry-pick.txt
+			db29065 (HEAD -> main) line-03
+			02b9326 line-02
+			bba4221 line-01
+
+```
 
 # Practie 06
-## Rebase
+## Merge and Rebase
 
 # Practie 07
 ## Git - Working via Visual Studio Code (VSC)
