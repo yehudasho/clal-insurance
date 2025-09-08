@@ -278,7 +278,9 @@ git push
 # Practice 05
 ## Revert, Cherry-pick
 
-### Cherry-pic
+### Revert
+
+### Cherry-pick
 - Make three commits
 - Create a new branch feature without the latest commits (HEAD~2)
 - Cherry-pick a commit from main (pick HEAD~1 its means line 02)
