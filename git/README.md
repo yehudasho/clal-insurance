@@ -276,7 +276,7 @@ git push
 
 
 # Practice 05
-## Revert, Cherry-pick
+## Revert, Cherry-pick, Reset
 
 ### Git Revert
 - Git revert is a Git command that cencel the changes by a specific commit
@@ -380,6 +380,18 @@ cat cherry-pick.txt
 		line 02
 
 ```
+### Git Reset
+
+
+
+
+
+| Reset type     | HEAD     | Staging area | Working dir
+|--------------|-------------|------------|--------------|
+|Soft|moves| keeps changes staged |keeps file changes|
+
+
+
 
 # Practie 06
 ## Merge and Rebase
