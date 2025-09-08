@@ -354,7 +354,6 @@ echo "line 02" >> cherry-pick.txt
 git add .
 git commit -m "line-02"
 echo "line 03" >> cherry-pick.txt
-git commit -m "line-03"
 git add .
 git commit -m "line-03"
 git log --oneline cherry-pick.txt
@@ -380,10 +379,42 @@ cat cherry-pick.txt
 		line 02
 
 ```
-### Git Reset
+### Git Reset - Soft, Mixed and Hard
+#### Git Reset Soft
+- HEAD moves to line 02
+- Staging area keeps changes (line3 is staged)
+- Working directory unchanged
 
+```
+echo "line 01" >> reset.txt
+git add .
+git commit -m "line-01"
+echo "line 02" >> reset.txt
+git commit -am "line-02"
+echo "line 03" >> reset.txt
+git commit -am "line-03"
+git log --oneline reset.txt
+	# Output
+		e5fe5fe (HEAD -> main) line-03
+		ce52f45 line-02
+		36965a6 line-01
+git cat reset.txt
+	# Output
+		line 01
+		line 02
+		line 03
+git reset --soft ce52f45
+git log --oneline reset.txt
+	# Output
+		ce52f45 (HEAD -> main) line-02
+		36965a6 line-01
+git cat reset.txt
+	# Output
+		line 01
+		line 02
+		line 03
 
-
+```
 
 
 | Reset type     | HEAD     | Staging area | Working dir
