@@ -278,6 +278,12 @@ git push
 # Practice 05
 ## Revert, Cherry-pick
 
+### Cherry-pic
+- Make three commits
+- Create a new branch feature without the latest commits (HEAD~2)
+- Cherry-pick a commit from main (pick HEAD~1 its means line 02)
+- Now feature has C1 plus C2
+
 ```
 echo "line 01" >> cherry-pick.txt
 git add .
@@ -291,10 +297,25 @@ git add .
 git commit -m "line-03"
 git log --oneline cherry-pick.txt
 	# Output
-			$ git log --oneline cherry-pick.txt
 			db29065 (HEAD -> main) line-03
 			02b9326 line-02
 			bba4221 line-01
+
+git checkout -b feature HEAD~2
+git branch
+git log --oneline cherry-pick.txt
+	#	Output
+		0c024d7 (HEAD -> feature) line-01
+
+git cherry-pick main~1
+git log --oneline cherry-pick.txt
+	#	Output
+		f88f488 (HEAD -> feature) line-02
+		0c024d7 line-01
+cat cherry-pick.txt
+	# Output
+		line 01
+		line 02
 
 ```
 
