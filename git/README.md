@@ -342,8 +342,8 @@ Unlike git merge, it does not merge the whole branch.
 
 Steps are:
 	- In branch main, Make three commits ( its means 3 line )
-	- Create a new branch feature without the latest commits(HEAD~2, its means 1 line )
-	- Cherry-pick a commit from main (pick HEAD~1 its means line 02)
+	- Create a new branch feature without the latest commits(HEAD 2, its means 1 line )
+	- Cherry-pick a commit from main (pick HEAD 1 its means line 02)
 	- Now feature has C1 plus C2
 
 ```
