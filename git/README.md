@@ -304,7 +304,16 @@ git push
 - Choose **Open with Live Server**
   - A browser window will open automatically at
   - http://127.0.0.1:5500/index.html
-### 
+### VSC - Additinal Example with calendar.html app
+- Open the VSC
+- On Git Bash terminal run the main.py app
+```
+py.exe main.py
+```
+- OPen the Browser and see the calendar app is running
+- Go to templates -> calendar.html file and change the color
+- Make sure the color is changed
+  
 # Practie 08
 ## Hooks
 
