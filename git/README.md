@@ -278,13 +278,73 @@ git push
 # Practice 05
 ## Revert, Cherry-pick
 
-### Revert
+### Git Revert
+- Git revert is a Git command that cencel the changes by a specific commit
+  by creating a new commit that is the inverse of that commit
+- It does not delete history
+- It does not remove the original commit instead,
+  it cancels out its changes in a new commit
 
-### Cherry-pick
-- Make three commits
-- Create a new branch feature without the latest commits (HEAD~2)
-- Cherry-pick a commit from main (pick HEAD~1 its means line 02)
-- Now feature has C1 plus C2
+- Steps are:
+  - Create file with 3 commit
+  - Revert on revision by revert command
+```
+echo "line 01" >> revert.txt
+git add .
+git commit -m "line-01"
+echo "line 02" >> revert.txt
+git add .
+git commit -m "line 02"
+echo "line 03" >> revert.txt
+git commit -m "line-03"
+git add .
+git commit -m "line-03"
+echo "line 04" >> revert.txt
+git commit -am "line 04"
+echo "line 05" >> revert.txt
+git commit -am "line 05"
+git log --oneline revert.txt
+	# Output
+		fb6e4de (HEAD -> main) line 05
+		041aab9 line 04
+		02e8d93 line 03
+		21d7822 line 02
+		53ecf45 line 01
+cat revert.txt
+	# Output
+		line 01
+		line 02
+		line 03
+		line 04
+		line 05
+git revert HEAD
+git log --oneline revert-01.txt
+	# Output - creating a new commit
+		589cc42 (HEAD -> main) Revert "line-05"
+		fb6e4de line 05
+		041aab9 line 04
+		02e8d93 line 03
+		21d7822 line 02
+		53ecf45 line 01
+cat revert.txt
+	# Output
+		line 01
+		line 02
+		line 03
+		line 04
+```
+### Git Cherry-pick
+
+- Git cherry-pick is a Git command that applies the changes from an existing commit (or commits) onto your current branch
+Unlike git merge, it does not merge the whole branch.
+- It only takes specific commit(s) and applies their changes on top of your current     branch.
+- This creates a new commit with a new SHA on your current branch.
+
+Steps are:
+	- In branch main, Make three commits ( its means 3 line )
+	- Create a new branch feature without the latest commits(HEAD~2, its means 1 line )
+	- Cherry-pick a commit from main (pick HEAD~1 its means line 02)
+	- Now feature has C1 plus C2
 
 ```
 echo "line 01" >> cherry-pick.txt
