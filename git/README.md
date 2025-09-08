@@ -389,6 +389,10 @@ cat cherry-pick.txt
 | Reset type     | HEAD     | Staging area | Working dir
 |--------------|-------------|------------|--------------|
 |Soft|moves| keeps changes staged |keeps file changes|
+|Mixed|moves| resets |keeps file changes|
+|Hard|moves| resets |resets files completely|
+
+
 
 
 
