@@ -273,3 +273,35 @@ git push 					# the message is since we need to sync the branches
 git push --set-upstream origin feature01
 git push
 ```
+# Practie 05
+## Merge
+
+# Practie 06
+## Rebase
+
+# Practie 07
+## Git - Working via Visual Studio Code (VSC)
+
+- Open the VSC
+- Create a new clal.html file
+- copy the contant of index.html file into clal.html
+```
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello World</title>
+</head>
+<body>
+    <h1>Hello Clal! 🎉</h1>
+    <p>Git - Working via Visual Studio Code .</p>
+</body>
+</html>
+```
+- commit the file
+# Practie 08
+## Hooks
+
+# Practie 09
+## Cherry-Pick
+
+
