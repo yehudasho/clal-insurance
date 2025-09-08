@@ -273,3 +273,19 @@ git push 					# the message is since we need to sync the branches
 git push --set-upstream origin feature01
 git push
 ```
+# Practie 05
+## Merge
+
+# Practie 06
+## Rebase
+
+# Practie 07
+## Working via Visual Studio Code (VSC)
+
+# Practie 08
+## Hooks
+
+# Practie 09
+## Cherry-Pick
+
+
