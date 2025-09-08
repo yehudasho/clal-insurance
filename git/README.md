@@ -445,7 +445,12 @@ cat reset.txt
 |Mixed|moves| resets |keeps file changes|
 |Hard|moves| resets |resets files completely|
 
+## Git Reset vs Revert
 
+- Git reset = Move the branch pointer and rewrites history
+
+- Git revert = Add a new commit that cancel a previous commit and safe for shared branches
+  - Keep the  history (with new commit)
 
 
 
