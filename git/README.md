@@ -297,7 +297,14 @@ git push
 </body>
 </html>
 ```
-- commit the file
+- Save the the file
+- Commit the file
+- Sync as with Remote Repository
+- Right-click on index.html
+- Choose **Open with Live Server**
+  - A browser window will open automatically at
+  - http://127.0.0.1:5500/index.html
+### 
 # Practie 08
 ## Hooks
 
