@@ -394,7 +394,7 @@ git commit -am "line-02"
 echo "line 03" >> reset.txt
 git commit -am "line-03"
 git log --oneline reset.txt
-	# Output
+	# Output 
 		e5fe5fe (HEAD -> main) line-03
 		ce52f45 line-02
 		36965a6 line-01
@@ -413,9 +413,31 @@ git cat reset.txt
 		line 01
 		line 02
 		line 03
-
+git add .
+git commit -m "add the changes"
 ```
 
+#### Git Reset Hard
+- HEAD moves to line 02
+- Staging area reset
+- Working directory changed
+```
+cat reset.txt
+line 01
+line 02
+line 03
+git reset --hard ce52f45
+$ git log --oneline reset.txt
+	# Output
+		ce52f45 (HEAD -> main) line-02
+		36965a6 line-01
+cat reset.txt
+	# Output
+		line 01
+		line 02
+
+
+```
 
 | Reset type     | HEAD     | Staging area | Working dir
 |--------------|-------------|------------|--------------|
