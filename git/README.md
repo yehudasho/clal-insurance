@@ -458,6 +458,64 @@ cat reset.txt
 # Practie 06
 ## Merge and Rebase
 
+### Git Merge
+```
+echo "merge-01 in main!" > file.txt
+git add file.txt
+git commit -m "merge-01 in main"
+git checkout -b feature-branch
+echo "merge-01 in Feature branch" > file.txt
+git commit -am "Updated file.txt in feature-branch"
+git checkout main
+echo "merge-02 in main!" > file.txt  
+git commit -am "Updated file.txt in main"
+git merge feature-branch
+
+	# Fix the conflict or you can abort of fix it
+
+git merge --abort
+git log                   # gitk with all options
+vi file.txt
+git status
+git commit -am "merged file.txt  main"
+git merge feature-branch
+git status
+cat file.txt
+
+```
+
+### Git Rebase
+
+- Create two commits in the main branch
+- Create and checkout a new branch (branch-rebase-demo)
+- Create one commits in the branch-rebase-demo branch
+- rebase the branch-rebase-demo branch into the main branch
+
+```
+git checkout main
+echo "line 01" > rebase-demo.txt		# Pay attantion its not append mode, otherway you will get conflict 
+git add rebase-demo.txt
+git commit -m "main line-01"
+echo "line 02" >> rebase-demo.txt
+git commit -am "main line-02"
+git log --oneline rebase-demo.txt
+gitk
+
+git checkout -b branch-rebase-demo
+echo "line 03" >> rebase-demo.txt
+git add rebase-demo.txt
+git commit -am "branch-rebase-demo line-03"
+git log --oneline rebase-file.txt
+gitk
+
+git checkout main
+git rebase branch-rebase-demo
+git log --oneline rebase-file.txt
+gitk
+
+	##### END #############
+```
+
 # Practie 07
 ## Git - Working via Visual Studio Code (VSC)
 
