@@ -288,6 +288,7 @@ git push
 - Steps are:
   - Create file with 3 commit
   - Revert on revision by revert command
+    
 ```
 echo "line 01" >> revert.txt
 git add .
@@ -338,14 +339,13 @@ cat revert.txt
 - Git cherry-pick is a Git command that applies the changes from an existing commit (or commits) onto your current branch
 Unlike git merge, it does not merge the whole branch.
 - It only takes specific commit(s) and applies their changes on top of your current     branch.
-- This creates a new commit with a new SHA on your current branch.
-
-Steps are:
-	- In branch main, Make three commits ( its means 3 line )
-	- Create a new branch feature without the latest commits(HEAD 2, its means 1 line )
-	- Cherry-pick a commit from main (pick HEAD 1 its means line 02)
-	- Now feature has C1 plus C2
-
+- This creates a new commit with a new SHA on your current branch
+  Steps are:
+  - In branch main, Make three commits ( its means 3 line )
+  - Create a new branch feature without the latest commits(HEAD 2, its means 1 line )
+  - Cherry-pick a commit from main (pick HEAD 1 its means line 02)
+  - Now feature has C1 plus C2
+    
 ```
 echo "line 01" >> cherry-pick.txt
 git add .
