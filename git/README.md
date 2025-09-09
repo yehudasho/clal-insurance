@@ -276,16 +276,76 @@ git push
 
 
 # Practice 05
-## Revert, Cherry-pick
+## Revert, Cherry-pick, Reset
 
-### Revert
+### Git Revert
+- Git revert is a Git command that cencel the changes by a specific commit
+  by creating a new commit that is the inverse of that commit
+- It does not delete history
+- It does not remove the original commit instead,
+  it cancels out its changes in a new commit
 
-### Cherry-pick
-- Make three commits
-- Create a new branch feature without the latest commits (HEAD~2)
-- Cherry-pick a commit from main (pick HEAD~1 its means line 02)
-- Now feature has C1 plus C2
+- Steps are:
+  - Create file with 3 commit
+  - Revert on revision by revert command
+    
+```
+echo "line 01" >> revert.txt
+git add .
+git commit -m "line-01"
+echo "line 02" >> revert.txt
+git add .
+git commit -m "line 02"
+echo "line 03" >> revert.txt
+git commit -m "line-03"
+git add .
+git commit -m "line-03"
+echo "line 04" >> revert.txt
+git commit -am "line 04"
+echo "line 05" >> revert.txt
+git commit -am "line 05"
+git log --oneline revert.txt
+	# Output
+		fb6e4de (HEAD -> main) line 05
+		041aab9 line 04
+		02e8d93 line 03
+		21d7822 line 02
+		53ecf45 line 01
+cat revert.txt
+	# Output
+		line 01
+		line 02
+		line 03
+		line 04
+		line 05
+git revert HEAD
+git log --oneline revert-01.txt
+	# Output - creating a new commit
+		589cc42 (HEAD -> main) Revert "line-05"
+		fb6e4de line 05
+		041aab9 line 04
+		02e8d93 line 03
+		21d7822 line 02
+		53ecf45 line 01
+cat revert.txt
+	# Output
+		line 01
+		line 02
+		line 03
+		line 04
+```
+### Git Cherry-pick
 
+- Git cherry-pick is a Git command that applies the changes from an existing commit (or commits) onto your current branch
+Unlike git merge, it does not merge the whole branch.
+- It only takes specific commit(s) and applies their changes on top of your current     branch.
+- This creates a new commit with a new SHA on your current branch
+  Steps are:
+  - In branch main, Make three commits ( its means 3 line )
+  - Create a new branch feature without the latest commits(HEAD 2, its means 1 line )
+  - Cherry-pick a commit from main (pick HEAD 1 its means line 02)
+  - Now feature has C1 plus C2
+    
 ```
 echo "line 01" >> cherry-pick.txt
 git add .
@@ -294,7 +354,6 @@ echo "line 02" >> cherry-pick.txt
 git add .
 git commit -m "line-02"
 echo "line 03" >> cherry-pick.txt
-git commit -m "line-03"
 git add .
 git commit -m "line-03"
 git log --oneline cherry-pick.txt
@@ -320,11 +379,144 @@ cat cherry-pick.txt
 		line 02
 
 ```
+### Git Reset - Soft, Mixed and Hard
+#### Git Reset Soft
+- HEAD moves to line 02
+- Staging area keeps changes (line3 is staged)
+- Working directory unchanged
 
-# Practie 06
+```
+echo "line 01" >> reset.txt
+git add .
+git commit -m "line-01"
+echo "line 02" >> reset.txt
+git commit -am "line-02"
+echo "line 03" >> reset.txt
+git commit -am "line-03"
+git log --oneline reset.txt
+	# Output 
+		e5fe5fe (HEAD -> main) line-03
+		ce52f45 line-02
+		36965a6 line-01
+git cat reset.txt
+	# Output
+		line 01
+		line 02
+		line 03
+git reset --soft ce52f45
+git log --oneline reset.txt
+	# Output
+		ce52f45 (HEAD -> main) line-02
+		36965a6 line-01
+git cat reset.txt
+	# Output
+		line 01
+		line 02
+		line 03
+git add .
+git commit -m "add the changes"
+```
+
+#### Git Reset Hard
+- HEAD moves to line 02
+- Staging area reset
+- Working directory changed
+```
+cat reset.txt
+line 01
+line 02
+line 03
+git reset --hard ce52f45
+$ git log --oneline reset.txt
+	# Output
+		ce52f45 (HEAD -> main) line-02
+		36965a6 line-01
+cat reset.txt
+	# Output
+		line 01
+		line 02
+
+
+```
+
+| Reset type     | HEAD     | Staging area | Working dir
+|--------------|-------------|------------|--------------|
+|Soft|moves| keeps changes staged |keeps file changes|
+|Mixed|moves| resets |keeps file changes|
+|Hard|moves| resets |resets files completely|
+
+## Git Reset vs Revert
+
+- Git reset = Move the branch pointer and rewrites history
+
+- Git revert = Add a new commit that cancel a previous commit and safe for shared branches
+  - Keep the  history (with new commit)
+
+
+
+
+# Practcie 06
 ## Merge and Rebase
 
-# Practie 07
+### Git Merge
+```
+echo "merge-01 in main!" > file.txt
+git add file.txt
+git commit -m "merge-01 in main"
+git checkout -b feature-branch
+echo "merge-01 in Feature branch" > file.txt
+git commit -am "Updated file.txt in feature-branch"
+git checkout main
+echo "merge-02 in main!" > file.txt  
+git commit -am "Updated file.txt in main"
+git merge feature-branch
+
+	# Fix the conflict or you can abort of fix it
+
+git merge --abort
+git log                   # gitk with all options
+vi file.txt
+git status
+git commit -am "merged file.txt  main"
+git merge feature-branch
+git status
+cat file.txt
+
+```
+
+### Git Rebase
+
+- Create two commits in the main branch
+- Create and checkout a new branch (branch-rebase-demo)
+- Create one commits in the branch-rebase-demo branch
+- rebase the branch-rebase-demo branch into the main branch
+
+```
+git checkout main
+echo "line 01" > rebase-demo.txt		# Pay attantion its not append mode, otherway you will get conflict 
+git add rebase-demo.txt
+git commit -m "main line-01"
+echo "line 02" >> rebase-demo.txt
+git commit -am "main line-02"
+git log --oneline rebase-demo.txt
+gitk
+
+git checkout -b branch-rebase-demo
+echo "line 03" >> rebase-demo.txt
+git add rebase-demo.txt
+git commit -am "branch-rebase-demo line-03"
+git log --oneline rebase-file.txt
+gitk
+
+git checkout main
+git rebase branch-rebase-demo
+git log --oneline rebase-file.txt
+gitk
+
+	##### END #############
+```
+
+# Practcie 07
 ## Git - Working via Visual Studio Code (VSC)
 
 - Open the VSC
@@ -359,10 +551,10 @@ py.exe main.py
 - Go to templates -> calendar.html file and change the color
 - Make sure the color is changed
   
-# Practie 08
+# Practcie 08
 ## Hooks
 
-# Practie 09
+# Practcie 09
 ## Cherry-Pick
 
 
