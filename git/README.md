@@ -1,4 +1,4 @@
-# Practice 01 hello clal
+# Practice 01
 - GIT - it is not just random 3 letters
 - Created by Linus Torvalds in 2005 (the same person who created Linux)
 
@@ -457,8 +457,28 @@ cat reset.txt
 
 # Practcie 06
 ## Merge and Rebase
+### Git Merge Fast Forword
 
-### Git Merge
+```
+git checkout -b branch-ff
+echo "ff-line 01" >> ff-file.txt
+git add ff-file.txt
+git commit -m "ff-line 01"
+echo "ff-line 02" >> ff-file.txt
+git add ff-file.txt
+git commit -m "ff-line 02"
+echo "ff-line 03" >> ff-file.txt
+git commit -am "ff-line 03"
+git log --oneline ff-file.txt
+
+git checkout main
+git merge branch-ff
+git log --oneline ff-file.txt
+gitk
+
+```
+
+### Git Merge with conflict
 ```
 echo "merge-01 in main!" > file.txt
 git add file.txt
