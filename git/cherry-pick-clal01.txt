@@ -3,4 +3,3 @@ line 02
 line 03
 revert 01
 revert 02
-revert 03
