@@ -455,7 +455,7 @@ cat reset.txt
 
 
 
-# Practie 06
+# Practcie 06
 ## Merge and Rebase
 
 ### Git Merge
@@ -516,7 +516,7 @@ gitk
 	##### END #############
 ```
 
-# Practie 07
+# Practcie 07
 ## Git - Working via Visual Studio Code (VSC)
 
 - Open the VSC
@@ -551,10 +551,10 @@ py.exe main.py
 - Go to templates -> calendar.html file and change the color
 - Make sure the color is changed
   
-# Practie 08
+# Practcie 08
 ## Hooks
 
-# Practie 09
+# Practcie 09
 ## Cherry-Pick
 
 
