@@ -2,4 +2,3 @@ line 01
 line 02
 line 03
 revert 01
-revert 02
