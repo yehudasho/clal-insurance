@@ -1,4 +1,4 @@
-# Practice 01 hello clal
+# Practice 01
 - GIT - it is not just random 3 letters
 - Created by Linus Torvalds in 2005 (the same person who created Linux)
 
@@ -457,8 +457,28 @@ cat reset.txt
 
 # Practcie 06
 ## Merge and Rebase
+### Git Merge Fast Forword
 
-### Git Merge
+```
+git checkout -b branch-ff
+echo "ff-line 01" >> ff-file.txt
+git add ff-file.txt
+git commit -m "ff-line 01"
+echo "ff-line 02" >> ff-file.txt
+git add ff-file.txt
+git commit -m "ff-line 02"
+echo "ff-line 03" >> ff-file.txt
+git commit -am "ff-line 03"
+git log --oneline ff-file.txt
+
+git checkout main
+git merge branch-ff
+git log --oneline ff-file.txt
+gitk
+
+```
+
+### Git Merge with conflict
 ```
 echo "merge-01 in main!" > file.txt
 git add file.txt
@@ -484,6 +504,31 @@ cat file.txt
 
 ```
 
+### Merge with --no-ff
+- Merge with --no-ff
+- Create and checkout a new branch (branch-no-ff)
+- Create no-ff-file.txt
+- Create three commits in the branch-no-ff branch
+- Move to the main branch:
+- Merge the branch-ff branch into the main branch
+
+```
+git checkout -b branch-no-ff
+echo "ff-line 01" >> no-ff-file.txt
+git add no-ff-file.txt
+git commit -m "no-ff-line 01"
+echo "no-ff-line 02" >> no-ff-file.txt
+git add no-ff-file.txt
+git commit -m "no-ff-line 02"
+echo "no-ff-line 03" >> no-ff-file.txt
+git commit -am "no-ff-line 03"
+git log --oneline no-ff-file.txt
+
+git checkout main
+git merge branch-no-ff --no-ff
+git log --oneline no-ff-file.txt
+gitk
+```
 ### Git Rebase
 
 - Create two commits in the main branch
