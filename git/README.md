@@ -504,6 +504,31 @@ cat file.txt
 
 ```
 
+### Merge with --no-ff
+- Merge with --no-ff
+- Create and checkout a new branch (branch-no-ff)
+- Create no-ff-file.txt
+- Create three commits in the branch-no-ff branch
+- Move to the main branch:
+- Merge the branch-ff branch into the main branch
+
+```
+git checkout -b branch-no-ff
+echo "ff-line 01" >> no-ff-file.txt
+git add no-ff-file.txt
+git commit -m "no-ff-line 01"
+echo "no-ff-line 02" >> no-ff-file.txt
+git add no-ff-file.txt
+git commit -m "no-ff-line 02"
+echo "no-ff-line 03" >> no-ff-file.txt
+git commit -am "no-ff-line 03"
+git log --oneline no-ff-file.txt
+
+git checkout main
+git merge branch-no-ff --no-ff
+git log --oneline no-ff-file.txt
+gitk
+```
 ### Git Rebase
 
 - Create two commits in the main branch
